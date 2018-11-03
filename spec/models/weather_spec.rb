@@ -20,10 +20,4 @@ RSpec.describe Weather, type: :model do
     expect(weather.apparent_temperature).to eq(apparent_temperature)
     expect(weather.image_url).to eq("https://s3.us-east-2.amazonaws.com/kc-the-weather-outisde/rain.gif")
   end
-
-  context "instance methods" do
-    describe "#get_weather_gif" do
-      
-    end
-  end
 end

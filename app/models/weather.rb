@@ -9,7 +9,10 @@ class Weather
     @image_url ||= get_weather_gif(data[:icon])
   end
 
+  private
+
   def get_weather_gif(data)
-    WeatherGif.where(condition: data).sample.image_url
+    weather_gifs = WeatherGif.where(condition: data)
+    return weather_gifs.sample.image_url if weather_gifs.length > 0
   end
 end
