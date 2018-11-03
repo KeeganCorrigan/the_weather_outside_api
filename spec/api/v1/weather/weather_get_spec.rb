@@ -8,22 +8,23 @@ describe "weather API" do
 
       weather = JSON.parse(response.body, symbolize_names: true)
 
+      binding.pry
+
       expect(weather).to have_key(:image_url)
       expect(weather).to have_key(:summary)
       expect(weather).to have_key(:apparent_temperature)
     end
 
-    xit "returns 400 if latitude is not present" do
+    it "returns 400 if latitude is not present" do
       get "/api/v1/weather", params: { longitude: 104.9903 }
 
       expect(response).to have_http_status(400)
     end
 
-    xit "returns 400 if longitude is not present" do
+    it "returns 400 if longitude is not present" do
       get "/api/v1/weather", params: { latitude: 39.7392 }
 
       expect(response).to have_http_status(400)
-
     end
   end
 end
