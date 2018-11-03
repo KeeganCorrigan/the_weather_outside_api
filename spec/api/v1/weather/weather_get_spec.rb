@@ -12,13 +12,13 @@ describe "weather API" do
       expect(weather).to have_key(:temperature)
     end
 
-    it "returns 400 if latitude is not present" do
+    xit "returns 400 if latitude is not present" do
       get "/api/v1/weather", params: { longitude: 104.9903 }
 
       expect(response).to have_http_status(400)
     end
 
-    it "returns 400 if longitude is not present" do
+    xit "returns 400 if longitude is not present" do
       get "/api/v1/weather", params: { latitude: 39.7392 }
 
       expect(response).to have_http_status(400)
