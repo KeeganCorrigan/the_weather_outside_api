@@ -5,11 +5,11 @@ class Weather
 
   def initialize(data)
     @summary = data[:summary]
-    @apparent_Temperature = data[:apparentTemperature]
+    @apparent_temperature = data[:apparentTemperature]
     @image_url ||= get_weather_gif(data[:icon])
   end
 
   def get_weather_gif(data)
-    WeatherGif.where(condition: data)[0].image_url
+    WeatherGif.where(condition: data).sample.image_url
   end
 end
