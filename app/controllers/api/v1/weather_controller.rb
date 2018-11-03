@@ -5,5 +5,9 @@ class Api::V1::WeatherController < ApplicationController
     weather_service = WeatherService.new
     current_weather = weather_service.current_weather(params[:latitude], params[:longitude])
 
+    weather = Weather.new(current_weather)
+
+    
+
   end
 end
