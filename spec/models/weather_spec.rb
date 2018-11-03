@@ -2,22 +2,24 @@ require "rails_helper"
 
 RSpec.describe Weather, type: :model do
   it "has attributes" do
-    weathergif = create(:weather_gif)
+    create(:weather_gif)
     summary = "Overcast"
     icon = "rain"
-    apparentTemperature = 60.8
+    apparent_temperature = 60.8
+
+    binding.pry
 
     params = {
                 summary: summary,
                 icon: icon,
-                apparentTemperature: apparentTemperature,
+                apparentTemperature: apparent_temperature,
               }
 
     weather = Weather.new(params)
 
     expect(weather).to be_a(Weather)
     expect(weather.summary).to eq(summary)
-    expect(weather.apparentTemperature).to eq(apparentTemperature)
+    expect(weather.apparent_temperature).to eq(apparent_temperature)
     expect(weather.image_url).to eq("https://s3.us-east-2.amazonaws.com/kc-the-weather-outisde/rain.gif")
   end
 end
