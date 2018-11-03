@@ -9,7 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro'
-
+gem 'faraday'
 # gem 'rack-cors'
 
 group :development, :test do
@@ -19,6 +19,7 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :development do
