@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.darksky.net/forecast/<key>/39.7392,104.9903?exclude=minutely,hourly,daily,flags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 20:51:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '399'
+      Connection:
+      - keep-alive
+      X-Authentication-Time:
+      - 12ms
+      Cache-Control:
+      - max-age=3600
+      Expires:
+      - Sat, 03 Nov 2018 21:51:44 +0000
+      X-Forecast-Api-Calls:
+      - '37'
+      X-Content-Type-Options:
+      - nosniff
+      X-Response-Time:
+      - 13.229ms
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"latitude":39.7392,"longitude":104.9903,"timezone":"Asia/Shanghai","currently":{"time":1541278304,"summary":"Overcast","icon":"cloudy","precipIntensity":0,"precipProbability":0,"temperature":25.23,"apparentTemperature":25.23,"dewPoint":19.01,"humidity":0.77,"pressure":1032.24,"windSpeed":2.93,"windGust":3.66,"windBearing":303,"cloudCover":1,"uvIndex":0,"visibility":10,"ozone":296.12},"offset":8}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 20:51:44 GMT
+recorded_with: VCR 4.0.0
