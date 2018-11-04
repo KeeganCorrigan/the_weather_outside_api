@@ -12,7 +12,7 @@ class Weather
   private
 
   def get_weather_gif(data)
-    weather_gifs = WeatherGif.where(condition: data)
+    weather_gifs = WeatherGif.where(condition: data.downcase)
     return weather_gifs.sample.image_url if weather_gifs.length > 0
   end
 end
